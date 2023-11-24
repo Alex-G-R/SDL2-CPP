@@ -12,7 +12,7 @@ int main()
 	SDL_CreateWindowAndRenderer(1280, 720, 0, &window, &renderer);
 
 	// Create a rectangle
-	SDL_Rect r{10, 10, 250, 250};
+	SDL_Rect r{10, 10, 100, 100};
 
 
 	bool running = true;
@@ -70,8 +70,20 @@ int main()
 						std::cout << "key down_arrow was released" << std::endl;
 						r.y += 10;
 						break;
+
+					case SDLK_r:
+						std::cout << "key R was released" << std::endl;
+						SDL_GetMouseState(&r.x, &r.y);
+						r.x -= r.w/2;
+						r.y -= r.h/2;
+						break;
 				}
 			}
+			// Check for mouse movement event 
+			//else if(event.type == SDL_MOUSEMOTION)
+			//{
+			//	SDL_GetMouseState(&r.x, &r.y);
+			//}
 		}
 
 		// Draw a rectange r
