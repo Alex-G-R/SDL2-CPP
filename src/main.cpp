@@ -28,7 +28,17 @@ int main()
 				switch(event.key.keysym.sym)
 				{
 					case SDLK_RIGHT:
-						std::cout << "key right was pressed" << std::endl;
+						std::cout << "key right_arrow was pressed" << std::endl;
+						break;
+				}
+			}
+			else if(event.type == SDL_KEYUP)
+			{
+				switch(event.key.keysym.sym)
+				{
+					case SDLK_RIGHT:
+						std::cout << "key right_arrow was released" << std::endl;
+						break;
 				}
 			}
 
